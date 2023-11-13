@@ -1,38 +1,40 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 .App {
-  text-align: center;
+  display: grid;
+  width: 90vw;
+  margin: 0 auto;
+  grid-template-columns: 1fr 1fr 400px;
+  grid-template-rows: 10vh 80vh 10vh;
+  grid-template-areas: "header header header" "main main calendar" "footer footer footer";
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.Header {
+  grid-area: header;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.Main {
+  grid-area: main;
+  max-height: 100%;
+  overflow-y: auto;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.Calendar {
+  grid-area: calendar;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+}
+.Footer {
+  grid-area: footer;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+@media (max-width: 930px) {
+  .App {
+    grid-template-areas: "header header header" "main main main" "footer footer footer";
+    width: 100%;
   }
-  to {
-    transform: rotate(360deg);
+  .Calendar {
+    display: none;
   }
 }
