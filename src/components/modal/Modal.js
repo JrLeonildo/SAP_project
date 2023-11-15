@@ -2,8 +2,21 @@ import React from "react";
 import Input from "../input/Input";
 import styles from "./Modal.module.css";
 import ButtonForm from "../buttons/ButtonForm";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
-const Modal = ({ modal, reservations, setReservations }) => {
+const Modal = ({ modal, setReservations }) => {
+  const notifySuccess = () =>
+    toast.success("Reserva Adicionada", {
+      position: "top-center",
+      autoClose: 3000,
+      hideProgressBar: true,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+    });
   const [name, setName] = React.useState("");
   const [date, setDate] = React.useState("");
   const [initialH, setInitialH] = React.useState("");
@@ -35,7 +48,7 @@ const Modal = ({ modal, reservations, setReservations }) => {
     };
 
     setReservations((reservations) => [...reservations, obj]);
-    alert("reserva adicionada");
+    notifySuccess();
     setName("");
     setDate("");
     setInitialH("");
@@ -106,4 +119,4 @@ const Modal = ({ modal, reservations, setReservations }) => {
   return null;
 };
 
-export default Modal;
+export { Modal, ToastContainer };

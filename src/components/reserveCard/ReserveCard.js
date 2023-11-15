@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "../reserveCard/ReserveCard.module.css";
-import svg from "../svg/delete_FILL0_wght400_GRAD0_opsz24.svg";
+import { AiFillDelete } from "react-icons/ai";
 
 const ReserveCard = ({
   id,
@@ -34,7 +34,9 @@ const ReserveCard = ({
         </p>
       </div>
       <button onClick={handleRemoveReserve}>
-        <img src={svg} alt="icone de delete" />
+        <i>
+          <AiFillDelete />
+        </i>
       </button>
     </div>
   );

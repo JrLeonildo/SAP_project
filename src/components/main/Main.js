@@ -1,12 +1,26 @@
 import React from "react";
 import styles from "./Main.module.css";
-import Modal from "../modal/Modal";
-import ButtonModal from "../buttons/ButtonModal";
+import { Modal, ToastContainer } from "../modal/Modal";
 import ReserveCard from "../reserveCard/ReserveCard";
+import { GlobalContext } from "../../GlobalContext";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Main = () => {
-  const [modal, setModal] = React.useState(false);
   const [reservations, setReservations] = React.useState([]);
+  const ModalContext = React.useContext(GlobalContext);
+
+  const notifyDeleted = () =>
+    toast.info("Reserva Removida", {
+      position: "top-center",
+      autoClose: 5000,
+      hideProgressBar: true,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+    });
 
   React.useEffect(() => {
     const savedReserves = window.localStorage.getItem("savedReserves");
@@ -19,15 +33,17 @@ const Main = () => {
         "savedReserves",
         JSON.stringify(reservations)
       );
-    setModal(false);
+    ModalContext.setModal(false);
   }, [reservations]);
 
   function handleRemoveReserve(deleted) {
     setReservations(reservations.filter((reserve) => reserve.id !== deleted));
+    notifyDeleted();
   }
 
   return (
     <div className={styles.main}>
+      <ToastContainer />
       <ul className={styles.cardContainer}>
         {reservations.map((reserve) => (
           <ReserveCard
@@ -45,11 +61,10 @@ const Main = () => {
 
       <div>
         <Modal
-          modal={modal}
+          modal={ModalContext.modal}
           reservations={reservations}
           setReservations={setReservations}
         />
-        <ButtonModal modal={modal} setModal={setModal} />
       </div>
     </div>
   );
