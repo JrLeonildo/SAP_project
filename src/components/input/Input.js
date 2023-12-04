@@ -1,21 +1,21 @@
-import React from 'react';
-import styles from './Input.module.css';
+import React from "react";
+import styles from "./Input.module.css";
 
-const Input = ({id, label, type, setValue, ...props}) => {
-  
+const Input = ({ id, label, type, setValue, ...props }) => {
   return (
-    <div className={styles.input}>
-      <label>
-        {label}
-        <input
-          type={type}
-          id={id}
-          name={id}
-          onChange={({target}) => setValue(target.value)}
-          {...props}
-        />
-      </label>
-    </div>
+    <label className={styles.label}>
+      {label}
+      <input
+        className={styles.input}
+        id="input"
+        type={type}
+        setValue={setValue}
+        onChange={({ target }) => setValue(target.value)}
+        size="small"
+        required
+        {...props}
+      />
+    </label>
   );
 };
 

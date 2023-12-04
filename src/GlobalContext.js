@@ -3,9 +3,9 @@ import React from "react";
 export const GlobalContext = React.createContext();
 
 export const GlobalModalContext = ({ children }) => {
-  const [modal, setModal] = React.useState(false);
+  const [formModal, setFormModal] = React.useState(false);
   return (
-    <GlobalContext.Provider value={{ modal, setModal }}>
+    <GlobalContext.Provider value={{ formModal, setFormModal }}>
       {children}
     </GlobalContext.Provider>
   );

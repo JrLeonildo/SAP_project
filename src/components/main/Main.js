@@ -1,40 +1,25 @@
 import React from "react";
 import styles from "./Main.module.css";
-import { Modal, ToastContainer } from "../modal/Modal";
+import FormModal from "../form_modal/FormModal";
 import ReserveCard from "../reserveCard/ReserveCard";
 import { GlobalContext } from "../../GlobalContext";
-import { toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
+import { ToastContainer, toast } from "react-toastify";
+
+const notifyDeleted = () =>
+  toast.info("Reserva Removida", {
+    position: "top-center",
+    autoClose: 5000,
+    hideProgressBar: true,
+    closeOnClick: true,
+    pauseOnHover: true,
+    draggable: true,
+    progress: undefined,
+    theme: "light",
+  });
 
 const Main = () => {
   const [reservations, setReservations] = React.useState([]);
   const ModalContext = React.useContext(GlobalContext);
-
-  const notifyDeleted = () =>
-    toast.info("Reserva Removida", {
-      position: "top-center",
-      autoClose: 5000,
-      hideProgressBar: true,
-      closeOnClick: true,
-      pauseOnHover: true,
-      draggable: true,
-      progress: undefined,
-      theme: "light",
-    });
-
-  React.useEffect(() => {
-    const savedReserves = window.localStorage.getItem("savedReserves");
-    if (savedReserves !== null) setReservations(JSON.parse(savedReserves));
-  }, []);
-
-  React.useEffect(() => {
-    if (reservations !== null)
-      window.localStorage.setItem(
-        "savedReserves",
-        JSON.stringify(reservations)
-      );
-    ModalContext.setModal(false);
-  }, [reservations]);
 
   function handleRemoveReserve(deleted) {
     setReservations(reservations.filter((reserve) => reserve.id !== deleted));
@@ -44,6 +29,7 @@ const Main = () => {
   return (
     <div className={styles.main}>
       <ToastContainer />
+      <h2 className={styles.mainHeader}>Reservas</h2>
       <ul className={styles.cardContainer}>
         {reservations.map((reserve) => (
           <ReserveCard
@@ -60,8 +46,8 @@ const Main = () => {
       </ul>
 
       <div>
-        <Modal
-          modal={ModalContext.modal}
+        <FormModal
+          formModal={ModalContext.formModal}
           reservations={reservations}
           setReservations={setReservations}
         />

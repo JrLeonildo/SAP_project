@@ -2,34 +2,23 @@ import React from "react";
 import styles from "./Header.module.css";
 import ButtonModal from "../buttons/ButtonModal";
 import { GlobalContext } from "../../GlobalContext";
-import { RiDeleteBin6Line } from "react-icons/ri";
-import { MdOutlineSpeakerNotes } from "react-icons/md";
-import { FaSearch } from "react-icons/fa";
+import NotificationsWindow from "../notificationsWindow/NotificationsWindow";
+import BinWindow from "../binWindow/BinWindow";
 
 const Header = () => {
   const ModalContext = React.useContext(GlobalContext);
-
   return (
     <header className={styles.header}>
-      <div>
+      <div className={styles.logoContainer}>
         <h1>Your Reserva</h1>
       </div>
-      <div className={styles.iconsContainer}>
-        <div>
-          <FaSearch />
-        </div>
-        <div>
-          <ButtonModal
-            modal={ModalContext.modal}
-            setModal={ModalContext.setModal}
-          />
-        </div>
-        <div>
-          <MdOutlineSpeakerNotes />
-        </div>
-        <div>
-          <RiDeleteBin6Line />
-        </div>
+      <div className={styles.navContainer}>
+        <ButtonModal
+          formModal={ModalContext.formModal}
+          setFormModal={ModalContext.setFormModal}
+        />
+        <NotificationsWindow />
+        <BinWindow />
       </div>
     </header>
   );

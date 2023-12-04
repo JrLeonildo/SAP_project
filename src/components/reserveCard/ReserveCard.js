@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "../reserveCard/ReserveCard.module.css";
-import { AiFillDelete } from "react-icons/ai";
+import DeleteIcon from "@mui/icons-material/Delete";
 
 const ReserveCard = ({
   id,
@@ -16,7 +16,7 @@ const ReserveCard = ({
     <div key={id} className={styles.card}>
       <div className={styles.nameContainer}>
         <h3>
-          Nome: <span>{name}</span>
+          <span>{name}</span>
         </h3>
       </div>
       <div className={styles.dateContainer}>
@@ -35,7 +35,7 @@ const ReserveCard = ({
       </div>
       <button onClick={handleRemoveReserve}>
         <i>
-          <AiFillDelete />
+          <DeleteIcon />
         </i>
       </button>
     </div>

@@ -5,28 +5,9 @@
 }
 .App {
   display: grid;
-  width: 90vw;
-  margin: 0 auto;
   grid-template-columns: 1fr 1fr 400px;
-  grid-template-rows: 10vh 80vh 10vh;
+  grid-template-rows: 8vh 84vh 8vh;
   grid-template-areas: "header header header" "main main calendar" "footer footer footer";
-}
-.Header {
-  grid-area: header;
-}
-.Main {
-  grid-area: main;
-  max-height: 100%;
-  overflow-y: auto;
-}
-.Calendar {
-  grid-area: calendar;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.Footer {
-  grid-area: footer;
 }
 
 @media (max-width: 930px) {
@@ -34,7 +15,5 @@
     grid-template-areas: "header header header" "main main main" "footer footer footer";
     width: 100%;
   }
-  .Calendar {
-    display: none;
-  }
+  
 }

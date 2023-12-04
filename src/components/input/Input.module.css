@@ -1,0 +1,21 @@
+.label {
+  margin-left: 1rem;
+  font-size: 1.1rem;
+  font-weight: bold;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.input {
+  height: 20px;
+  background-color: white;
+  border-radius: 2px;
+  border: none;
+  margin-bottom: 8px;
+  padding-left: 4px;
+}
+.input:hover {
+  margin-left: 6px;
+  scale: 1.1;
+}
+.input:active {
+  background-color: solid 1px black;
+}
