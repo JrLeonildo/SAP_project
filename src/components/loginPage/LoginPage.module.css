@@ -1,0 +1,34 @@
+.loginPage {
+  background-color: #cde5f0;
+  font-family: arial;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+}
+.formContainer {
+  background-color: #ffffff;
+  flex-direction: column;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 340px;
+  height: 320px;
+  border-radius: 13px;
+}
+.formContainer h1 {
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+.formContainer form {
+  display: flex; flex-direction: column;
+}
+.formContainer p {
+  color: #545454;
+}
+.formContainer p a {
+  color: black;
+  font-weight: bold;
+  text-decoration: none;
+}

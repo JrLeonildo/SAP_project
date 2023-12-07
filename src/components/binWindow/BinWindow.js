@@ -28,7 +28,7 @@ const BinWindow = () => {
   return (
     <div>
       <Button className={styles.btnOpen} onClick={handleOpen}>
-        <DeleteOutlinedIcon sx={{ fontSize: 27, color: "black" }} />
+        <DeleteOutlinedIcon sx={{ fontSize: 30, color: "black" }} />
       </Button>
       <Modal
         open={open}

@@ -1,3 +1,38 @@
 .footer {
   grid-area: footer;
+  background-color: #c7e1f8;
+  width: 100%;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+}
+.social {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.social button:hover {
+  scale: 1.2;
+}
+.email p{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: gray;
+  padding: 2px 0;
+}
+.info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.info p {
+  color: gray;
+}
+.info a {
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
 }

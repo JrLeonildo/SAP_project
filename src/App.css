@@ -2,18 +2,5 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-}
-.App {
-  display: grid;
-  grid-template-columns: 1fr 1fr 400px;
-  grid-template-rows: 8vh 84vh 8vh;
-  grid-template-areas: "header header header" "main main calendar" "footer footer footer";
-}
-
-@media (max-width: 930px) {
-  .App {
-    grid-template-areas: "header header header" "main main main" "footer footer footer";
-    width: 100%;
-  }
-  
+  font-family: Arial, Helvetica, sans-serif;
 }
