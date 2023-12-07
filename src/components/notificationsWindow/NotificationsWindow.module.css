@@ -6,3 +6,16 @@
   font-weight: bold;
   font-size: 1.2em;
 }
+.btnIcon {
+  font-size: 30px;
+  color: #000000;
+}
+
+@media (max-width: 400px) {
+  .btn {
+    padding: 0;
+  }
+  .btnIcon {
+    font-size: 22px;
+  }
+}

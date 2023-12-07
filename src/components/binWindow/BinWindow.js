@@ -5,7 +5,7 @@ import Button from "@mui/material/Button";
 import DeleteOutlinedIcon from "@mui/icons-material/DeleteOutlined";
 import styles from "./BinWindow.module.css";
 
-const style = {
+const boxStyle = {
   position: "absolute",
   top: "45%",
   left: "50%",
@@ -27,8 +27,8 @@ const BinWindow = () => {
 
   return (
     <div>
-      <Button className={styles.btnOpen} onClick={handleOpen}>
-        <DeleteOutlinedIcon sx={{ fontSize: 30, color: "black" }} />
+      <Button className={styles.btn} onClick={handleOpen}>
+        <DeleteOutlinedIcon className={styles.btnIcon} />
       </Button>
       <Modal
         open={open}
@@ -36,7 +36,7 @@ const BinWindow = () => {
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description"
       >
-        <Box sx={style}>
+        <Box sx={boxStyle}>
           <div className={styles.header}>
             <p>Lixeira</p>
           </div>

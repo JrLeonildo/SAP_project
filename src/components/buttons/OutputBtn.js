@@ -1,11 +1,12 @@
 import React from "react";
 import Button from "@mui/material/Button";
 import OutputIcon from "@mui/icons-material/Output";
+import styles from "./OutputBtn.module.css";
 
 const OutputBtn = ({ onClick }) => {
   return (
-    <Button onClick={onClick}>
-      <OutputIcon sx={{ fontSize: 30, color: "black" }} />
+    <Button className={styles.btn} onClick={onClick}>
+      <OutputIcon className={styles.btnIcon} />
     </Button>
   );
 };

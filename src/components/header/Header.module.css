@@ -5,7 +5,7 @@
   justify-content: space-between;
   align-items: center;
   grid-area: header;
-  padding: 0 2rem;
+  padding-left: 2rem;
   border-bottom: solid 1px black;
 }
 .logoContainer {
@@ -14,16 +14,20 @@
 }
 .navContainer {
   display: flex;
-  justify-content: space-evenly;
+  gap: 1px;
   align-items: center;
   text-align: center;
   margin-right: 1rem;
 }
 
-@media (max-width: 880px) {
+@media (max-width: 600px) {
   .header {
     grid-template-columns: 1fr;
     margin: auto ;
+    padding-left: 4px;
+    flex-direction: column;
+    height: 110px;
+    justify-content: center;
   }
   .logoContainer {
     text-align: center;

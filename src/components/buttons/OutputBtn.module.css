@@ -1,0 +1,13 @@
+.btnIcon {
+  font-size: 30px;
+  color: #000000;
+}
+
+@media (max-width: 400px) {
+  .btn {
+    width: 20px;
+  }
+  .btnIcon {
+    font-size: 22px;
+  }
+}

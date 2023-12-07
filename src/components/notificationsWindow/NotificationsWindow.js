@@ -27,8 +27,8 @@ const NotificationsWindow = () => {
 
   return (
     <div>
-      <Button className={styles.btnOpen} onClick={handleOpen}>
-        <SpeakerNotesOutlinedIcon sx={{ fontSize: 28, color: "black" }} />
+      <Button className={styles.btn} onClick={handleOpen}>
+        <SpeakerNotesOutlinedIcon className={styles.btnIcon} />
       </Button>
       <Modal
         open={open}
